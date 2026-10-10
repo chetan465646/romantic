@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Aparna ❤️</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, serif;
+  color: #78334f;
+  text-align: center;
+  background: linear-gradient(135deg, #fff4f8, #ffe0eb);
+}
+
+header {
+  padding: 90px 20px;
+  min-height: 90vh;
+}
+
+h1 {
+  font-size: clamp(40px, 8vw, 72px);
+  color: #b83268;
+}
+
+h2 {
+  color: #b83268;
+  font-size: 32px;
+}
+
+p {
+  line-height: 1.8;
+}
+
+button {
+  background: #b83268;
+  color: white;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: Georgia, serif;
+  margin: 12px;
+}
+
+button:hover {
+  background: #92234f;
+}
+
+section {
+  padding: 40px 18px;
+}
+
+/* Photo gallery */
+.gallery {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  max-width: 1000px;
+  margin: 25px auto;
+}
+
+/* Hide photos until the button is clicked */
+#gallery {
+  display: none !important;
+  opacity: 0;
+  transform: translateY(15px);
+}
+
+#gallery.show {
+  display: grid !important;
+  opacity: 1;
+  transform: translateY(0);
+  animation: appear 0.8s ease both;
+}
+
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 12px;
+  box-shadow: 0 5px 18px #b832681c;
+  animation: appear 0.7s ease both;
+}
+
+.card img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.card img:hover {
+  transform: scale(1.02);
+}
+
+.letter {
+  max-width: 700px;
+  margin: auto;
+  background: white;
+  padding: 28px;
+  border-radius: 18px;
+  line-height: 2;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+
+#surprise {
+  max-width: 650px;
+  margin: 20px auto;
+  padding: 0 15px;
+}
+
+/* Large photo viewer */
+#photoViewer {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(30, 10, 20, 0.94);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+#photoViewer.open {
+  display: flex;
+}
+
+#largePhoto {
+  max-width: 95%;
+  max-height: 75vh;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 5px 30px #000;
+}
+
+#largeCaption {
+  color: white;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-top: 15px;
+  max-width: 600px;
+}
+
+#closeViewer {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 25px;
+  padding: 8px 15px;
+  margin: 0;
+  background: #b83268;
+}
+
+footer {
+  padding: 25px;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    padding: 60px 18px;
+    min-height: 85vh;
+  }
+
+  h2 {
+    font-size: 27px;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .letter {
+    padding: 20px;
+    line-height: 1.9;
+  }
+
+  #largePhoto {
+    max-width: 95%;
+    max-height: 70vh;
+  }
+
+  #largeCaption {
+    font-size: 16px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <p>💕 A special surprise, made with love 💕</p>
+  <h1>Happy Birthday,<br>Aparna ❤️</h1>
+  <p>You make my world a little more beautiful.</p>
+
+  <button onclick="document.getElementById('letter').scrollIntoView({behavior:'smooth'})">
+    Open Your Letter 💌
+  </button>
+</header>
+
+<section id="memories">
+  <h2>Beautiful Memories 📸</h2>
+  <p>Every photo tells a story, and every smile is precious.</p>
+
+  <button id="openPhotos" onclick="openGallery()">
+    Open Your Memories ❤️
+  </button>
+
+  <div class="gallery" id="gallery">
+
+    <div class="card">
+      <img src="images/photo1.jpg" alt="Aparna" loading="lazy">
+      <p>Your smile makes my world a little brighter. ❤️</p>
+    </div>
+
+    <div class="card">
+      <img src="images/photo2.jpg" alt="Aparna" loading="lazy">
+      <p>Some people are special, and then there's you. 💗</p>
+    </div>
+
+    <div class="card">
+      <img src="images/photo3.jpg" alt="Aparna" loading="lazy">
+      <p>If happiness had a face, it would remind me of you. 🌸</p>
+    </div>
+
+    <div class="card">
+      <img src="images/photo4.jpg" alt="Aparna" loading="lazy">
+      <p>You make ordinary moments feel extraordinary. ✨</p>
+    </div>
+
+    <div class="card">
+      <img src="images/photo5.jpg" alt="Aparna" loading="lazy">
+      <p>My favourite memories are the ones that make me smile because of you. 💕</p>
+    </div>
+
+    <div class="card">
+      <img src="images/photo6.jpg" alt="Aparna" loading="lazy">
+      <p>Never forget how beautiful your heart and soul are. 🌷</p>
+    </div>
+
+    <div class="card">
+      <img src="images/photo7.jpg" alt="Aparna" loading="lazy">
+      <p>I'm grateful that life gave me the chance to know you. ❤️</p>
+    </div>
+
+    <div class="card">
+      <img src="images/photo8.jpg" alt="Aparna" loading="lazy">
+      <p>You deserve a life filled with love, laughter, and beautiful dreams. 💖</p>
+    </div>
+
+    <div class="card">
+      <img src="images/photo9.jpg" alt="Aparna" loading="lazy">
+      <p>Keep shining, Aparna. The world needs your beautiful light. 🌟</p>
+    </div>
+
+    <div class="card">
+      <img src="images/photo10.jpg" alt="Aparna" loading="lazy">
+      <p>One birthday wish from me: may you always be proud of the person you are. 🎂❤️</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="letter">
+  <h2>A Letter From Chetan 💌</h2>
+
+  <div class="letter">
+    Dear Aparna ❤️,<br><br>
+
+    Happy Birthday to you, my special person! 🎂✨<br><br>
+
+    Maybe today is your special day, but for me, every day feels special simply because you are a part of my life. ❤️<br><br>
+
+    You mean so much more to me than I can explain in words. Sometimes, I sit and wonder how someone I've known for such a short time could become so special to me. ❤️<br><br>
+
+
+I admire the way you pay attention to even the smallest details, how much your opinions mean to me, how dedicated you are to your work, and the way you live your life. The way you think, handle situations, and stay true to yourself makes you truly amazing in my eyes. 💗<br><br>
+
+    I know we sometimes fight over silly little things. 😂 Sometimes we misunderstand each other, and sometimes our conversations don't go the way we expect. But one thing I truly appreciate is the way you handle situations. There is so much I can learn from you, and even our little arguments teach me something about understanding you better.<br><br>
+
+    And honestly, Aparna, I have a small problem. 😂❤️<br><br>
+
+    I want to impress you, but I don't know how. I want to express my feelings, but whenever I try, words suddenly become too small. I want to tell you how special you are to me, but every sentence feels incomplete. Maybe I'm not the best at expressing my feelings, and maybe I sometimes bother you with my silly talks, but please know that everything comes from a genuine place in my heart.<br><br>
+
+    I'm still trying to figure out how to impress you. So please be patient with me. I'm a slow learner when it comes to these things! 😂❤️<br><br>
+
+    But jokes apart, I don't want to impress you just by saying beautiful words. I want you to see the sincerity in my actions, the respect I have for you, and the effort I make to understand you better. I want to be someone with whom you can share your happiness, your worries, your dreams, and even your most ordinary days.<br><br>
+
+    I don't know what the future holds for us, and I don't want to make big promises just to sound romantic. But I do know that I'm genuinely happy to have you in my life. I value the conversations we have, and even the little memories that might seem ordinary today but could become precious to me tomorrow.<br><br>
+
+    Whenever life gets difficult, I hope you never forget how capable, strong, and wonderful you are. ❤️ And if life ever gets tough and you feel like things aren't going your way, just remember that there's always one guy standing behind you, cheering for you, supporting you, and reminding you of how amazing you are.<br><br>
+
+    Keep smiling, keep shining, and keep being the beautiful soul you are.<br><br>
+
+    And remember, somewhere in this world, there's a silly guy who is still learning how to impress you, struggling to find the perfect words for you, and smiling whenever he thinks about you. 🙈❤️<br><br>
+
+    With lots of care, affection, and a little extra craziness,<br><br>
+
+    Happy Birthday, my dear Aparna! ❤️🎂<br><br>
+
+    Yours,<br><br>
+    <strong>Chetan ❤️</strong>
+  </div>
+</section>
+
+<section>
+  <h2>A Little Birthday Surprise 💖</h2>
+  <button onclick="showSurprise()">Tap Here, Aparna 💕</button>
+  <p id="surprise"></p>
+</section>
+
+<footer>Made with love by Chetan ❤️</footer>
+
+<!-- Full-screen photo viewer -->
+<div id="photoViewer" onclick="closePhoto(event)">
+  <button id="closeViewer"
+          onclick="closePhoto(event)"
+          aria-label="Close photo">✕</button>
+  <img id="largePhoto" src="" alt="Aparna">
+  <p id="largeCaption"></p>
+</div>
+
+<script>
+function openGallery() {
+  const gallery = document.getElementById("gallery");
+
+  gallery.classList.add("show");
+  document.getElementById("openPhotos").style.display = "none";
+
+  gallery.scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+}
+
+/* Open each photo individually when clicked */
+document.querySelectorAll("#gallery .card img").forEach(function(photo) {
+  photo.addEventListener("click", function() {
+    const viewer = document.getElementById("photoViewer");
+    const largePhoto = document.getElementById("largePhoto");
+    const caption = document.getElementById("largeCaption");
+
+    largePhoto.src = photo.src;
+    largePhoto.alt = photo.alt;
+
+    caption.textContent = photo.nextElementSibling.textContent;
+
+    viewer.classList.add("open");
+    document.body.style.overflow = "hidden";
+  });
+});
+
+/* Close the large photo */
+function closePhoto(event) {
+  if (
+    event.target.id === "photoViewer" ||
+    event.target.id === "closeViewer"
+  ) {
+    document.getElementById("photoViewer").classList.remove("open");
+    document.body.style.overflow = "";
+  }
+}
+
+/* Close photo using the Escape key */
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Escape") {
+    document.getElementById("photoViewer").classList.remove("open");
+    document.body.style.overflow = "";
+  }
+});
+
+function showSurprise() {
+  document.getElementById("surprise").textContent =
+    "🎉 Dear Aparna, you don't need to be perfect to be amazing. Just be yourself and keep shining! Your best chapters are still ahead! ✨❤️💗";
+}
+</script>
+
+</body>
+</html>
